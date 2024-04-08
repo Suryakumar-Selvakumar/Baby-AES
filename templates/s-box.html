@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Substitution-Box (S-Box)</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"></head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/aes-history">History</a></li>
+                <li><a href="/aes-working">Working</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/encrypt">Encrypt</a></li>
+                <li><a href="/decrypt">Decrypt</a></li>
+            </ul>
+        </nav> 
+        <h1>Substitution-Box (S-Box)</h1>
+        <div class="outer-content2">
+        <div class="content2">
+            <p>
+                AES uses a type of S-box, which is derived from the multiplicative inverse over the finite field GF(2^8), followed by an affine transformation.
+                The S-box used in AES is designed to be resistant to known cryptanalytic attacks, such as linear and differential cryptanalysis. The S-box is used in the SubBytes/InvSubBytes step of the AES encryption/decryption process
+                and it is a fixed table of 256 values, which is publicly known and is the same for every AES implementation.</p>
+            <p> There are 2 variations of the S-box and they are as follows: <b> (i) Forward S-box </b>(Used in Encryption) and <b> (ii) Inverse S-box </b>(Used in Decryption)</p>
+        </div>
+        <div class="s-boxes">
+            <div class="s-box">
+            <h3>Forward S-box</h3>
+            <p><i>The Forward S-box is derived as follows:</i></p>
+            <ol class="numbered-list">
+                <li><b>Inverse in GF(2^8):</b> For a given byte, considered as a polynomial representation over GF(2), the multiplicative inverse is computed in GF(2^8), which is a finite field with 256 elements. The only exception is 0, which is mapped to itself.</li>
+                <li><b>Transformation:</b> After taking the multiplicative inverse, the byte is transformed using an affine transformation. This is a linear transformation (a matrix multiplication) followed by a vector addition.</li>
+            </ol>
+            <p><b>Affine Transformation:-</b></p>
+            <p><b>i. Matrix Multiplication:</b></p>
+            <figure class="image-block5">
+                <img src="{{ url_for('static', filename='images/fmm.jpeg') }}">
+            </figure>
+            <p> where \( [x_0, \ldots, x_7] \) is the multiplicative inverse as a vector.</p>
+            <p><b>ii. XOR:</b> After the matrix multiplication is done, the matrix values are XOR'd by the AES constant hexadecimal vector \({'0x63'}(01100011)\) which results in the following forward S-box.</p>
+            <figure class="image-block6">
+                <img src="{{ url_for('static', filename='images/fsbox.jpeg') }}">
+            </figure>
+            <p>Each row and column header represents the higher and lower 4 bits of the input byte, respectively. The table entry at that row and column gives the output byte, which is the result of the substitution process.
+               For example, to find the substitution for the input byte \({'0x53'}\), you would look at row 5 and column 3 of the S-box to get the substituted value.</p>
+            </div>
+            <div class="s-box">
+            <h3>Inverse S-box</h3>
+            <p><i>The Inverse S-box is derived as follows:</i></p>
+            <ol class="numbered-list">
+                <li><b>Inverse Affine Transformation:</b> Each byte is first subjected to the inverse of the affine transformation used in the S-box.</li>
+                <li><b>Multiplicative Inverse in GF(2^8):</b> After the inverse affine transformation, the resulting byte is then transformed by taking the multiplicative inverse in the finite field GF(2^8), just like the S-box. Again, the exception is 0, which is mapped to itself.</li>
+            </ol>
+            <p style="margin-top: 33px;"><b>Inverse Affine Transformation:-</b></p>
+            <p><b>i. Matrix Multiplication:</b></p>
+            <figure class="image-block5">
+                <img src="{{ url_for('static', filename='images/imm.jpeg') }}">
+            </figure>
+            <p> where \( [x_0, \ldots, x_7] \) is the multiplicative inverse as a vector.</p>
+            <p><b>ii. XOR:</b> After the matrix multiplication is done, the matrix values are XOR'd by the AES constant hexadecimal vector \({'0x05'}(00000101)\) which results in the following Inverse S-box.</p>
+            <figure class="image-block6">
+                <img src="{{ url_for('static', filename='images/isbox.jpeg') }}">
+            </figure>
+            <p> Each row and column header represents the higher and lower 4 bits of the input byte, respectively. The table entry at that row and column gives the original byte before the substitution process.
+                For example, to find the original value for the substituted byte \({'0x8a'}\), you would look at row 8 and column a of the inverse S-box to get the original value.</p>
+            </div>
+        </div>
+    

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <title>Decrypt - Baby AES Demo</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/aes-history">History</a></li>
+            <li><a href="/aes-working">Working</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/encrypt">Encrypt</a></li>
+            <li><a href="/decrypt">Decrypt</a></li>
+        </ul>
+    </nav>
+    <h1>Decryption</h1>
+    <div class="outer-content7">
+    <div class="content15">
+    <form action="/decrypt" method="post">
+        <h2>Cipher-text</h2>
+        <input type="text" id="ciphertext" name="ciphertext"><br>
+        <input type="submit" value="Decrypt">
+    </form>
+    </div>
+    <div class="grid-container">
+    {% if b64_ciphertext %}
+        <div class="grid-item">
+            <h3>Cipher-text</h3>
+            <p>{{ b64_ciphertext }}</p>
+        </div>
+    {% endif %}
+    {% if steps %}
+        {% for step_name, step_data in steps %}
+            <div class="grid-item">
+                <h3>{{ step_name }}</h3>
+                <p>{{ step_data }}</p>
+            </div>
+        {% endfor %}
+    {% endif %}
+    </div>
+    <div class="content16">
+        <h2>Decrypted-text (Original Plain-text)</h2>
+        {% if decrypted_text %}
+        <p style="font-size: larger;">{{ decrypted_text }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

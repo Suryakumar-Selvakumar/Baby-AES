@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bitwise XOR Operations</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"></head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/aes-history">History</a></li>
+                <li><a href="/aes-working">Working</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/encrypt">Encrypt</a></li>
+                <li><a href="/decrypt">Decrypt</a></li>
+            </ul>
+        </nav> 
+        <h1>Bitwise XOR Operations</h1>
+        <div class="outer-content3">
+        <div class="content3">
+            <p> A bitwise XOR is a binary operation that takes two bit patterns of equal length and performs the logical exclusive OR operation on each pair of corresponding bits. The result in each position is 1 if only one of the bits is 1, but will be 0 if both are 0 or both are 1. In this we perform the comparison of two bits, being 1 if the two bits are different, and 0 if they are the same.</p>
+            <figure class="image-block7">
+                <img src="{{ url_for('static', filename='images/xor.jpeg') }}">
+                <figcaption style="font-size: small;">Bitwise XOR of 4-bit integers</figcaption>
+            </figure>
+            <p><i> For example:-</i></p>
+            <p>\[0\;1\;0\;1\quad(decimal\;5)\]</p>
+            <p style="margin-left: -82px;">\[\quad XOR\quad0\;0\;1\;1\quad(decimal\;3)\]</p>
+            <p style="margin-left: -39px;">\[=\quad0\;1\;1\;0\quad(decimal\;6)\]</p>
+            <p> The bitwise XOR may be used to invert selected bits in a register (also called toggle or flip). Any bit may be toggled by XORing it with 1. For example, given the bit pattern 0010 (decimal 2) the second and fourth bits may be toggled by a bitwise XOR with a bit pattern containing 1 in the second and fourth positions.</p>
+            <p><i> For example:-</i></p>
+            <p>\[0\;0\;1\;0\quad(decimal\;2)\]</p>
+            <p style="margin-left: -73px;">\[\quad XOR\quad1\;0\;1\;0\quad(decimal\;10)\]</p>
+            <p style="margin-left: -39px;">\[=\quad1\;0\;0\;0\quad(decimal\;8)\]</p>
+        </div>
+        <div class="content4">
+            <h3>Mathematical equivalent and Truth Table</h3>
+            <figure class="image-block8">
+                <img src="{{ url_for('static', filename='images/xortt.jpeg') }}">
+                <figcaption style="font-size: small;">Bitwise equivalent operations of two bits P and Q</figcaption>
+            </figure>
+            <p>This equation defines the bitwise exclusive OR (XOR) operation between two binary numbers, \(x\) and \(y\). Assuming \(x\geq y\) for the non-negative integers, the bitwise operations can be written as follows:-</p>
+            <p style="margin-top: 20px;">\[ x \text{ XOR } y = \sum_{n=0}^{\left\lfloor \log_2(x) \right\rfloor} 2^n \left( \left( \left( \left\lfloor \frac{x}{2^n} \right\rfloor \text{ mod } 2 \right) + \left( \left\lfloor \frac{y}{2^n} \right\rfloor \text{ mod } 2 \right) \right) \text{ mod } 2 \right) \]</p>
+            <p style="margin: 76px; margin-top: 10px; margin-left: -76px;">\[= \sum_{n=0}^{\left\lfloor \log_2(x) \right\rfloor} 2^n \left( \left( \left\lfloor \frac{x}{2^n} \right\rfloor + \left\lfloor \frac{y}{2^n} \right\rfloor \right) \text{ mod } 2 \right) \] </p>
+            <p style="margin-top: -55px;"> In essence, this equation is a verbose and mathematical way to describe the process of taking two binary numbers, comparing each bit, performing XOR on each bit, and then combining these results to form a new binary number that represents the XOR of the original two numbers.</p>
+        </div>

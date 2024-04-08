@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Finite Fields</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"></head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/aes-history">History</a></li>
+            <li><a href="/aes-working">Working</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/encrypt">Encrypt</a></li>
+            <li><a href="/decrypt">Decrypt</a></li>
+        </ul>
+    </nav> 
+    <h1>Finite Fields (Galois Fields)</h1>
+    <div class="outer-content">
+    <div class="content">
+        <p>
+            Galois Field, named after Evariste Galois, also known as finite field, refers to a field in which there exists finitely many elements. It is particularly useful in
+            translating computer data as they are represented in binary forms. That is,
+            computer data consist of combination of two numbers, 0 and 1, which are the
+            components in Galois field whose number of elements is two. Representing
+            data as a vector in a Galois Field allows mathematical operations to scramble
+            data easily and effectively.
+        </p>
+        <figure class="image-block">
+            <img src="{{ url_for('static', filename='images/ff2D.jpeg') }}">
+            <figcaption style="font-size: small;">Finite Field \( gf(2^3) \) visualized as a graph. Here, solid lines represent addition and dotted lines represent multiplication.</figcaption>
+        </figure>
+        <h3>Definition & Formulae</h3>
+        <p>The elements of Galois Field \( gf(p^n) \) is defined as </p>
+        <p>\[ gf(p^n) = (0, 1, 2, \ldots, p - 1) \cup \]</p>
+        <p>\[ (p, p + 1, p + 2, \ldots, p + p - 1) \cup \]</p>
+        <p>\[ (p^2, p^2 + 1, p^2 + 2, \ldots, p^2 + p - 1) \cup \ldots \cup \] </p>
+        <p>\[ (p^{n-1}, p^{n-1} + 1, p^{n-1} + 2, \ldots, p^{n-1} + p - 1) \] </p>
+        <p>where \( p \in \mathbb{P} \) and \( n \in \mathbb{Z}^+ \). The order of the field is given by \( p^n \) while \( p \) is called the characteristic of the field. On the other hand, \( gf \), as one may have guessed it, stands for Galois Field. Also note that the degree of polynomial of each element is at most \( n - 1 \).</p>
+        <p >AES uses \( gf(2^8) \) arithmetic: all values are in the range \( 0 - 255 \). All values are written in hex: letters are converted to binary and that is converted to hexadecimal values. A binary string is represented as a polynomial to perform arithmetic operations on it. </p>
+    </div>
+    <div class="examples-container">
+        <div class="example">
+        <h3>Example 1: Addition</h3>
+        <p> \[ 00110110: X^5+X^5+X^2+X \] </p>
+        <p> \[ 10010011: X^7+X^4+X+1 \] </p>    
+        <h4>XOR:</h4>
+        <p> \[ 36 + 93 = 00110110 + 10010011 \] </p>
+        <p> \[ = (X^5+X^4+X^2+X) + (X^7+X^4+X+1) \]  (Note \( 1+1=0 \), so \( X^i+X^i=0 \) for any exponent i) </p>
+        <p> \[ = X^7+X^5+X^2+1 \]</p>
+        <p> \[ = 1010 0101 = a5 \] </p>
+        </div>
+        <div class="example">
+        <h3>Example 2: Multiplication</h3>
+        <p> \[ (36)(93) = (00110110)(10010011) \] </p>
+        <p> \[ = (X^5+X^5+X^2+X)(X^7+X^4+X+1) \] </p>
+        <h4>XOR:</h4>
+        <p> \[ = X^{12}+X^9+X^6+X^5+X^{11}+X^8+X^5+X^4+X^9+X^6+X^3+ \] </p>
+        <p> \[ X^2+X^8+X^5+X^2+X \]</p>
+        <p> \[ = 1100000111010 \] </p>
+        <p> If the degree of the resulting polynomial exceeds \(7\), a XOR division is done with the \( gf(2^8) \) reducing polynomial: \[X^8 + X^4 + X^3 + X + 1 = 100011011\] </p>
+        <p> After XOR division, we get \(01001001\) which corresponds to \(49\). Thus, \((36)(93)=49\) </p>
+        </div>
+    </div>
+</body>
+</html>

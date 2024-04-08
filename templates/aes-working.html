@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AES Algorithm</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"></head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/aes-history">History</a></li>
+                <li><a href="/aes-working">Working</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/encrypt">Encrypt</a></li>
+                <li><a href="/decrypt">Decrypt</a></li>
+            </ul>
+        </nav>
+        <h1>AES Working</h1>
+    <div class="outer-content7">
+    <div class="content13">
+        <p style="text-align: center;"><i>Below is an animation that describes the entire AES Encryption process.</i></p>
+    </div>
+    <div class="video-container">
+        <video id="myVideo" width="1000" height="690" controls autoplay muted>
+        <source src="{{ url_for('static', filename='videos/aes.mp4') }}" type="video/mp4">Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="content12">
+    <h3>AES Algorithm</h3>
+    <figure class="image-block15">
+        <img src="{{ url_for('static', filename='images/aes.jpeg') }}">
+        <figcaption>AES Algorithm - Block Diagram</figcaption>
+    </figure>
+    <ol class="numbered-list2">
+        <li><b>1. KeyExpansion –</b> round keys are derived from the cipher key using the AES key schedule. AES requires a separate 128-bit round key block for each round plus one more.</li>
+        <li><b>2. Initial round key addition:</b>
+            <ol><li><i>AddRoundKey –</i> each byte of the state is combined with a byte of the round key using bitwise xor.</li></ol></li>
+        <li><b>3. 9, 11 or 13 rounds:</b>
+        <ol><li><i>SubBytes –</i> a non-linear substitution step where each byte is replaced with another according to a lookup table.</li>
+            <li><i>ShiftRows –</i> a transposition step where the last three rows of the state are shifted cyclically a certain number of steps.</li>
+            <li><i>MixColumns –</i> a linear mixing operation which operates on the columns of the state, combining the four bytes in each column.</li>
+            <li><i>AddRoundKey</i></li></li></ol>
+        <li><b>4. Final round (making 10, 12 or 14 rounds in total):</b>
+        <ol><li><i>SubBytes</li>
+            <li><i>ShiftRows</li>
+            <li><i>AddRoundKey</i></li></li></ol>
+    </ol>
+    </div>
+    <div class="content14">
+    <p style="text-align: center;">Animation Credit: <a href="https://www.cryptool.org/en/cto/aes-animation">https://www.cryptool.org/en/cto/aes-animation</a></p>
+    </div>
+    </div>
+    </body>
+</html>

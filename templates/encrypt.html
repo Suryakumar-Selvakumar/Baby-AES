@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <title>Encrypt - Baby AES Demo</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/aes-history">History</a></li>
+            <li><a href="/aes-working">Working</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/encrypt">Encrypt</a></li>
+            <li><a href="/decrypt">Decrypt</a></li>
+        </ul>
+    </nav>
+    <h1>Encryption</h1>
+    <div class="outer-content7">
+    <div class="content15">
+    <form action="/encrypt" method="post">
+        <h2>Plain-text</h2>
+        <input type="text" id="plaintext" name="plaintext"><br>
+        <input type="submit" value="Encrypt">
+    </form>
+    </div>
+    <div class="grid-container">
+        <!-- Display plaintext as the first grid item -->
+        {% if plaintext %}
+            <div class="grid-item">
+                <h3>Plain-text</h3>
+                <p>{{ plaintext }}</p>
+            </div>
+        {% endif %}
+        <!-- Existing steps output -->
+        {% if steps %}
+            {% for step_name, step_data in steps %}
+                <div class="grid-item">
+                    <h3>{{ step_name }}</h3>
+                    <p>{{ step_data }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div class="content16">
+        <h2>Encrypted-text</h2>
+        <p style="font-size: larger;">{{ steps[-1][1] if steps else '' }}</p>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Substitution-Permutation Network</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"></head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/aes-history">History</a></li>
+                <li><a href="/aes-working">Working</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/encrypt">Encrypt</a></li>
+                <li><a href="/decrypt">Decrypt</a></li>
+            </ul>
+        </nav> 
+        <h1>Substitution-Permutation Network</h1>
+        <div class="outer-content1">
+        <div class="content1">
+            <p>
+                A Substitution-Permutation network or an SP network is a class of block ciphers that consist of rounds of a repeated series of mathematical 
+                operations. SP networks form the basis of the AES algorithm.
+            </p>
+            <figure class="image-block1">
+                <img src="{{ url_for('static', filename='images/spn.jpeg') }}">
+                <figcaption style="font-size: small;">Working of a Substitution-Permutation Network</figcaption>
+            </figure>
+            <h3>Operations in an SP network</h3>
+            <p>As the figure to the right shows, the plaintext is passed to an SP network to produce a ciphertext. 
+                This is done through rounds, each of which consists of three main operations:</p>
+            <ul class="bulleted-list">
+                <li><b> Addition of the round key:</b> This operation involves combining the round key with the block of plaintext (or ciphertext in later rounds) using a simple bitwise XOR operation.</li>
+                <li><b>Substitution of bits:</b> Substitution involves replacing bits or groups of bits with other bits according to a predefined substitution box (S-box).</li>
+                <li><b>Permutation of bits:</b> Permutation, also known as transposition, shuffles the bits of the block, changing their positions based on a predefined permutation box (P-box).</li>
+            </ul>
+            <p>Together Round Key operation, Substitution and Permutation make up the operation of the Substitution - Permutation Network. Let’s look into these three steps in more detail below.</p>
+        </div>
+        <div class="operations">
+            <div class="operation">
+            <h3>Add Round Key</h3>
+            <p> Each round in an SP network has a round key. Round keys are retrieved from the expansion of one secret key passed to the network at the start. At the start of each round, the text is XORed with the respective round key. 
+                This ensures that the ciphertext can only be decrypted by someone who has the round keys. </p>
+            <figure class="image-block2">
+                <img src="{{ url_for('static', filename='images/ark.jpeg') }}">
+            </figure>
+            </div>
+            <div class="operation">
+            <h3>Substitution</h3>
+            <p> Next, the bits of the text are substituted among themselves. Since SP networks are used in block ciphers, the text is arranged as blocks. The block text bytes are substituted based on rules dictated by predefined S-boxes. </p>
+            <figure class="image-block3">
+                <img src="{{ url_for('static', filename='images/sub.jpeg') }}">
+            </figure>
+            </div>
+            <div class="operation">
+                <h3>Permutation</h3>
+                <p> Finally, comes the permutation step. In this step, bits in the block text are mixed around. One example of such mixing is in AES, where all rows except the first are shifted by one. This is shown below: </p>
+                <figure class="image-block4">
+                    <img src="{{ url_for('static', filename='images/perm.jpeg') }}">
+                </figure>
+            </div>
+        </div>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AES History</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"></head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/aes-history">History</a></li>
+                <li><a href="/aes-working">Working</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/encrypt">Encrypt</a></li>
+                <li><a href="/decrypt">Decrypt</a></li>
+            </ul>
+        </nav> 
+        <h1>AES History</h1>
+        <div class="outer-content7">
+        <div class="oneandtwo">
+            <div class="one">
+            <h3>1. The Need for a New Standard</h3>
+            <figure class="image-block16">
+                <img src="{{ url_for('static', filename='images/des.jpeg') }}">
+                <figcaption>DES Working</figcaption>
+            </figure>
+            <p>In the late 1990s, it became clear that the existing standard for encryption, the Data Encryption Standard (DES), was no longer secure against increasingly sophisticated attacks and growing computational power.</p>
+            </div>
+            <div class="one">
+            <h3>2. The Competition</h3>
+            <figure class="image-block17">
+                <img src="{{ url_for('static', filename='images/nist.jpeg') }}">
+            </figure>
+            <p>In 1997, the National Institute of Standards and Technology (NIST) announced a competition to select a successor to DES.</p>
+            <p style="margin-top: 40px;">The competition was open to the international cryptographic community and required that the new standard be a symmetric-key block cipher capable of protecting sensitive government information.</p>
+            </div>
+        </div>
+        <div class="threeandfour">
+            <div class="three">
+            <h3>3. The Requirements</h3>
+            <p>Proposed algorithms needed to support block sizes of 128 bits and key sizes of 128, 192, and 256 bits.</p>
+            <p>Submissions were evaluated on security, performance, efficiency, implementability, and flexibility.</p>
+            </div>
+            <div class="three">
+            <h3>4. Submissions and Testing</h3>
+            <p>Fifteen algorithms from various international proposers were submitted; these included MARS, RC6, Serpent, Twofish, and Rijndael, among others.</p>
+            <p>Several rounds of analysis and testing were conducted, including public scrutiny and comment periods to ensure transparency and community involvement.</p>
+            </div>
+        </div>
+        <div class="fiveandsix">
+            <div class="five">
+            <h3>5. The Selection</h3>
+            <figure class="image-block18">
+                <img src="{{ url_for('static', filename='images/jd.jpeg') }}">
+                <figcaption>Joan Daemen</figcaption>
+            </figure>
+            <figure class="image-block18">
+                <img src="{{ url_for('static', filename='images/vr.jpeg') }}">
+                <figcaption>Vincent Rijmen</figcaption>
+            </figure>
+            <p>In October 2000, NIST selected the Rijndael cipher, designed by two Belgian cryptographers, Vincent Rijmen and Joan Daemen, as the winner of the competition.</p>
+            <p>Rijndael was chosen for its combination of security, performance, efficiency, and flexibility in both hardware and software environments.</p>
+            </div>
+            <div class="five">
+            <h3>6. Standardization</h3>
+            <p>In 2001, NIST released Federal Information Processing Standards Publication 197 (FIPS PUB 197), which officially announced AES and detailed the Rijndael algorithm specification as the chosen standard.</p>
+            <figure class="image-block19">
+                <img src="{{ url_for('static', filename='images/fips.jpeg') }}">
+                <figcaption>A snippet of the FIPS Publication</figcaption>
+            </figure>
+            </div>
+        </div>
+        <div class="sevenandeight">
+            <div class="seven">
+            <h3>7. Adoption and Usage</h3>
+            <p>AES became effective as a federal government standard on May 26, 2002, after approval by the Secretary of Commerce.</p>
+            <p>AES is used worldwide and is one of the most popular algorithms for symmetric key encryption.</p>
+            <p>It is also part of the ISO/IEC 18033-3 international standard.</p>
+            <figure class="image-block19">
+                <img src="{{ url_for('static', filename='images/iso.jpeg') }}">
+            </figure>
+            </div>
+            <div class="seven">
+            <h3>8. Enduring Legacy</h3>
+            <figure class="image-block20">
+                <img src="{{ url_for('static', filename='images/aesapps.jpeg') }}">
+                <figcaption>AES Applications</figcaption>
+            </figure>
+            <p>AES has stood the test of time, remaining secure against cryptanalytic attacks better than any other block cipher of its time.</p>
+            <p>It is implemented in various protocols like Secure Sockets Layer (SSL)/Transport Layer Security (TLS), Wi-Fi Protected Access (WPA2), and many others.</p>
+            <p>AES is mandatory in many government cryptographic solutions and is widely used in the private sector.</p>
+            </div>
+        </div>
+        <div class="nineandten">
+            <div class="nine">
+            <h3>9. Ongoing Research</h3>
+            <figure class="image-block20">
+                <img src="{{ url_for('static', filename='images/qc.jpeg') }}">
+            </figure>
+            <p>While AES remains secure, cryptographers continue to study its theoretical underpinnings and resistance to attack, particularly in the face of quantum computing advances.</p>
+            <p>Side-channel attacks and other non-direct cryptanalytic attacks are an area of ongoing research and concern.</p>
+            </div>
+            <div class="nine">
+            <h3>10. Future Prospects</h3>
+            <figure class="image-block21">
+                <img src="{{ url_for('static', filename='images/nistqc.jpeg') }}">
+            </figure>
+            <p>AES will likely be replaced in the future as computational capacities increase and new cryptographic challenges arise.</p>
+            <p>NIST has begun a post-quantum cryptography standardization process, looking ahead to the era of quantum computing.</p>
+            </div>
+        </div>
+        </div>

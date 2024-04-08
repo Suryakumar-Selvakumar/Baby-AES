@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matrix Operations</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"></head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/aes-history">History</a></li>
+                <li><a href="/aes-working">Working</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/encrypt">Encrypt</a></li>
+                <li><a href="/decrypt">Decrypt</a></li>
+            </ul>
+        </nav>
+        <h1>Matrix Operations</h1>
+        <div class="outer-content6">
+            <div class="content8">
+                <p>The AES cipher uses a variety of matrix operations during the encryption and decryption process. These operations take place on a \(nxn\) matrix of bytes, known as the state, which undergoes a series of transformations. It primarily uses the following types of matrix operations:</p>
+            </div>
+            <div class="mops">
+                <div class="mop">
+                    <h3>Matrix Addition (AddRoundKey)</h3>
+                    <p>In the AddRoundKey step, each element of the state matrix is combined with the corresponding element of the round key matrix using bitwise XOR (exclusive OR). Since the AES operates in the Galois field GF(2^8), this addition is equivalent to GF(2) addition for each bit of the byte. Mathematically, for two bytes \(a\) and \(b\):</p>
+                    <p style="margin-top: 30px; margin-bottom: 30px;">\[a \oplus b = (a_7 \oplus b_7, a_6 \oplus b_6, \ldots, a_0 \oplus b_0)\]</p>
+                    <p>This is a byte-wise operation that can be considered a matrix addition where each byte is an element of the field \(GF(2^8)\).</p>
+                </div>
+                <div class="mop">
+                    <h3>Matrix Multiplication (MixColumns)</h3>
+                    <p>The MixColumns step treats each column of the state as a polynomial over \(GF(2^8)\) and multiplies it modulo \(x^4+1\) with a fixed polynomial given by the matrix:</p>
+                    <p>\[\begin{bmatrix}
+                        02 & 03 & 01 & 01 \\
+                        01 & 02 & 03 & 01 \\
+                        01 & 01 & 02 & 03 \\
+                        03 & 01 & 01 & 02 \\
+                        \end{bmatrix}\]</p>
+                    <p>The matrix multiplication in MixColumns is a special kind of multiplication that involves both the multiplication and addition operations in \(GF(2^8)\). Each byte is multiplied using the Galois field multiplication rules, and the results are added together using the Galois field addition \((XOR)\).</p>
+                </div>
+            </div>
+            <div class="mops-group">
+                <div class="mop">
+                    <h3>Inverse Matrix Multiplication (InvMixColumns)</h3>
+                    <p>The InvMixColumns operation is the inverse of MixColumns. It involves multiplying each column of the state by the inverse of the MixColumns matrix to return to the original matrix. The inverse matrix is:</p>
+                    <p>\[\begin{bmatrix}
+                        0e & 0b & 0d & 09 \\
+                        09 & 0e & 0b & 0d \\
+                        0d & 09 & 0e & 0b \\
+                        0b & 0d & 09 & 0e \\
+                        \end{bmatrix}\]</p>
+                </div>
+                <div class="mop">
+                    <h3>Byte Substitution with Affine Transformation (SubBytes)</h3>
+                    <p style="margin-top: 40px;">The SubBytes step uses a fixed \(8x8\) matrix over \(GF(2)\) for an affine transformation as part of the S-box computation. Each byte in the state is substituted based on this transformation followed by an XOR with a constant byte. Though not a matrix operation in the conventional sense, it is a linear transformation which can be represented as a matrix operation in the corresponding field.</p>
+                </div>
+                <div class="mop">
+                    <h3>Permutation (ShiftRows)</h3>
+                    <p style="margin-top: 40px;">ShiftRows is a permutation operation that cyclically shifts the bytes in each row of the state matrix. This can be viewed as a permutation matrix operation in linear algebra, albeit with a very simple structure.</p>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

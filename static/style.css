@@ -1,0 +1,1497 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FEECE2; /* Light grey background */
+    color: #333; /* Dark text for contrast */
+    text-align: center; /* Center text */
+}
+
+nav {
+    background-color: #a17e5b;
+    color: white;
+    display: block;
+    justify-content: space-between; /* Space items */
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    display: block;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px; /* Increase size of nav text */
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    background-color: #8c6d4c; /* Darker shade for hover effect */
+    padding: 10px;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label, input[type="text"], input[type="submit"] {
+    font-size: 18px; /* Increased text size */
+    margin: 10px;
+}
+
+input[type="text"] {
+    padding: 5px;
+    width: 300px; /* Larger input field */
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #5cb85c; /* Bootstrap
+'success' green */
+color: white;
+border: none;
+cursor: pointer;
+}
+
+input[type="submit"]:hover {
+background-color: #4cae4c; /* Darker green on hover */
+}
+
+#math-concepts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows */
+    grid-gap: 10px; /* space between boxes */
+    padding: 20px;
+    max-width: 1200px; /* max container width */
+    margin: auto; /* center the container */
+    margin-top: 0px;
+    margin-left: -20px;
+}
+
+.container {
+    display: inline-block; /* Only take up as much space as needed */
+    background-color: #E2BFB3; 
+    padding: 20px; /* Give some space inside the box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.concept {
+    background-color: #FEECE2;
+
+    border: 1px solid #ddd; /* Light border for each box */
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* More prominent shadow */
+    font-size: 1.2em; /* Larger font size for the text */
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    height: 150px; /* Set a fixed height */
+    text-align: center; /* Ensure text is centered */
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Dark text for contrast */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+    border-radius: 10px;
+    width: 248.9px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.concept:hover {
+    transform: translateY(-5px); /* 'Lift' the box on hover */
+    cursor: pointer; /* Change the cursor to indicate clickable */
+}
+
+footer {
+    padding-top: 20px; /* Add more space above the footer content */
+    background-color: #FEECE2; /* Ensure the footer has a different background */
+    margin-top: -10px;
+}
+
+footer p {
+    font-weight: bold; /* Make "Made By" bold */
+    font-size: 1.5em; /* Increase size */
+}
+
+.team-names {
+    display: flex;
+    justify-content: space-evenly; /* Evenly space the team members' names */
+    padding: 20px 0;
+}
+
+.team-names span {
+    font-style: italic; /* Make names italic */
+    font-size: 1.2em; /* Increase size */
+    margin: 0 10px; /* Space out the names */
+}
+
+.content {
+    background-color: #FEECE2; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: justify; /* Text alignment to center */
+    align-items: center;
+}
+
+.outer-content { 
+    background-color: #E2BFB3; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: center; /* Text alignment to center */
+    justify-content: space-between;
+}
+
+.content h1, 
+.content h2, 
+.content h3, 
+.content h4, 
+.content h5, 
+.content h6 {
+    text-align: center; /* Center-align for headings */
+}
+
+.examples-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.example {
+    background-color: #FEECE2;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 590px; /* Adjust the width to be less than 50% to create space */
+    margin-right: 10px; /* Add right margin to the first example box */
+    text-align: justify; /* Justify the text inside the box */
+    display: inline-block; /* Use inline-block for side-by-side display */
+}
+
+/* Ensure the text within each example box is justified */
+.example p {
+    text-align: justify;
+}
+
+.example:last-child {
+    margin-right: 0; /* Remove right margin for the last example box */
+}
+
+.example h1, 
+.example h2, 
+.example h3, 
+.example h5, 
+.example h6 {
+    text-align: center; /* Center-align for headings */
+}
+
+.image-block {
+    width: 100%; /* Adjust this to match the image width if needed */
+    max-width: 300px; /* Adjust this to match the image width if needed */
+    margin: 0 auto; /* This centers the figure if it has a set width less than its container */
+    text-align: center;
+    float: right;
+    top: 0%;
+    margin-left: 20px;
+}
+
+.image-block img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: auto; /* This maintains the aspect ratio of the image */
+}
+
+.image-block figcaption {
+    font-size: x-small;
+    text-align:justify;
+    margin-top: 0.5em; /* Adds some space between the image and the caption */
+}
+.image-block1 {
+    width: 100%; /* Adjust this to match the image width if needed */
+    max-width: 450px; /* Adjust this to match the image width if needed */
+    margin: 0 auto; /* This centers the figure if it has a set width less than its container */
+    text-align: center;
+    float: right;
+    top: 0%;
+    margin-left: 50px;
+    margin-right: 31px;
+}
+
+.image-block1 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: 350px; /* This maintains the aspect ratio of the image */
+}
+
+.image-block1 figcaption {
+    font-size: x-small;
+    text-align: center;
+    margin-top: 0.5em; /* Adds some space between the image and the caption */
+}
+
+.bulleted-list {
+    padding-left: 80px; /* Increase padding to move bullets away from margin */
+}
+
+ul li {
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+.content1 {
+    background-color: #FEECE2; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: justify; /* Text alignment to center */
+    align-items: center;
+}
+
+.outer-content1 { 
+    background-color: #E2BFB3; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: center; /* Text alignment to center */
+    justify-content: space-between;
+}
+
+.content1 h1, 
+.content1 h2, 
+.content1 h3, 
+.content1 h4, 
+.content1 h5, 
+.content1 h6 {
+    text-align: center; /* Center-align for headings */
+}
+
+.operation h3 {
+    text-align: center; /* Center-align for headings */
+}
+
+.operations {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.operation {
+    background-color: #FEECE2;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 590px; /* Adjust the width to be less than 50% to create space */
+    margin-right: 10px; /* Add right margin to the first example box */
+    text-align: justify; /* Justify the text inside the box */
+    display: inline-block; /* Use inline-block for side-by-side display */
+}
+
+.operation p {
+    text-align: justify;
+}
+
+.operation:last-child {
+    margin-right: 0; /* Remove right margin for the last example box */
+}
+
+.image-block2 {
+    width: 300px; /* Adjust this to match the image width if needed */
+    margin: 0 auto; /* This centers the figure if it has a set width less than its container */
+    text-align: center;
+    top: 0%;
+    margin-top: 20px;
+}
+
+.image-block2 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: 250px; /* This maintains the aspect ratio of the image */
+}
+
+.image-block3 {
+    width: 350px; /* Adjust this to match the image width if needed */
+    margin: 0 auto; /* This centers the figure if it has a set width less than its container */
+    text-align: center;
+    top: 0%;
+    margin-top: 53px;
+}
+
+.image-block3 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: 250px; /* This maintains the aspect ratio of the image */
+}
+
+.image-block4 {
+    width: 350px; /* Adjust this to match the image width if needed */
+    margin: 0 auto; /* This centers the figure if it has a set width less than its container */
+    text-align: center;
+    top: 0%;
+    margin-top: 53px;
+}
+
+.image-block4 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: 250px; /* This maintains the aspect ratio of the image */
+}
+
+.content2 {
+    background-color: #FEECE2; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: justify; /* Text alignment to center */
+    align-items: center;
+}
+
+.outer-content2 { 
+    background-color: #E2BFB3; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: center; /* Text alignment to center */
+    justify-content: space-between;
+}
+
+.content2 h1, 
+.content2 h2, 
+.content2 h3, 
+.content2 h4, 
+.content2 h5, 
+.content2 h6 {
+    text-align: center; /* Center-align for headings */
+}
+
+.s-boxes h3 {
+    text-align: center; /* Center-align for headings */
+}
+
+.s-boxes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.s-box {
+    background-color: #FEECE2;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 590px; /* Adjust the width to be less than 50% to create space */
+    margin-right: 10px; /* Add right margin to the first example box */
+    text-align: justify; /* Justify the text inside the box */
+    display: inline-block; /* Use inline-block for side-by-side display */
+}
+
+.s-box p {
+    text-align: justify;
+}
+
+.s-box:last-child {
+    margin-right: 0; /* Remove right margin for the last example box */
+}
+
+.numbered-list {
+    list-style-type: none; /* Remove default numbers */
+    counter-reset: list-counter; /* Create a new instance of counter */
+    padding-left: 20px; /* Adjust padding as needed */
+  }
+  
+.numbered-list li {
+    counter-increment: list-counter; /* Increment counter for each list item */
+    margin-bottom: 10px; /* Space between items */
+  }
+  
+.numbered-list li::before {
+    content: counter(list-counter) ". "; /* Insert counter before content */
+    font-weight: bold; /* Make the counter numbers bold */
+  }
+
+.image-block5 {
+    width: 350px; /* Adjust this to match the image width if needed */
+    margin: 0 auto; /* This centers the figure if it has a set width less than its container */
+    text-align: center;
+    top: 0%;
+}
+
+.image-block5 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: 250px; /* This maintains the aspect ratio of the image */
+}
+
+.image-block6 {
+    width: 400px; /* Adjust this to match the image width if needed */
+    margin: 0 auto; /* This centers the figure if it has a set width less than its container */
+    text-align: center;
+    top: 0%;
+}
+
+.image-block6 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: 400px; /* This maintains the aspect ratio of the image */
+}
+
+.content3 {
+    background-color: #FEECE2; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: justify; /* Text alignment to center */
+    align-items: center;
+}
+
+.outer-content3 { 
+    background-color: #E2BFB3; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: center; /* Text alignment to center */
+    justify-content: space-between;
+}
+
+.content3 h1, 
+.content3 h2, 
+.content3 h3, 
+.content3 h4, 
+.content3 h5, 
+.content3 h6 {
+    text-align: center; /* Center-align for headings */
+}
+
+.image-block7 {
+    width: 100%; /* Adjust this to match the image width if needed */
+    max-width: 290px; /* Adjust this to match the image width if needed */
+    margin: 0 auto; /* This centers the figure if it has a set width less than its container */
+    float: right;
+    top: 0%;
+    margin-left: 20px;
+    margin-top: -15px;
+}
+
+.image-block7 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: auto; /* This maintains the aspect ratio of the image */
+}
+
+.image-block7 figcaption {
+    font-size: x-small;
+    text-align:center;
+    margin-top: 0.5em; /* Adds some space between the image and the caption */
+}
+
+.image-block8 {
+    max-width: 200px; /* Adjust this to match the image width if needed */
+    margin: 0 auto; /* This centers the figure if it has a set width less than its container */
+    float: right;
+    top: 0%;
+    margin-left: 20px;
+    margin-top: -20px;
+}
+
+.image-block8 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: 250px; /* This maintains the aspect ratio of the image */
+}
+
+.image-block8 figcaption {
+    font-size: x-small;
+    text-align: center;
+    margin-top: 0.5em; /* Adds some space between the image and the caption */
+}
+
+.content4 {
+    background-color: #FEECE2; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    margin-top: 10px;
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: justify; /* Text alignment to center */
+    align-items: center;
+}
+
+.content4 h1, 
+.content4 h2, 
+.content4 h3, 
+.content4 h4, 
+.content4 h5, 
+.content4 h6 {
+    text-align: center; /* Center-align for headings */
+}
+
+.content5 {
+    background-color: #FEECE2; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: justify; /* Text alignment to center */
+    align-items: center;
+}
+
+.outer-content4 { 
+    background-color: #E2BFB3; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: center; /* Text alignment to center */
+    justify-content: space-between;
+}
+
+.content5 h1, 
+.content5 h2, 
+.content5 h3, 
+.content5 h4, 
+.content5 h5, 
+.content5 h6 {
+    text-align: center; /* Center-align for headings */
+}
+
+.image-block9 {
+    width: 100%; /* Adjust this to match the image width if needed */
+    max-width: 400px; /* Adjust this to match the image width if needed */
+    margin: 0 auto; /* This centers the figure if it has a set width less than its container */
+    float: right;
+    top: 0%;
+    margin-left: 20px;
+    margin-top: -20px;
+}
+
+.image-block9 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: 355px; /* This maintains the aspect ratio of the image */
+}
+
+.image-block9 figcaption {
+    font-size: x-small;
+    text-align:center;
+    margin-top: 0.5em; /* Adds some space between the image and the caption */
+}
+
+.numbered-list1 {
+    list-style-type: none; /* Remove default numbers */
+    counter-reset: list-counter; /* Create a new instance of counter */
+    padding-left: 65px; /* Adjust padding as needed */
+  }
+  
+.numbered-list1 li {
+    counter-increment: list-counter; /* Increment counter for each list item */
+    margin-bottom: 10px; /* Space between items */
+  }
+  
+.numbered-list1 li::before {
+    content: counter(list-counter) ". "; /* Insert counter before content */
+  }
+
+.image-block10 {
+    width: 270px; /* Adjust this to match the image width if needed */
+    text-align: center;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.image-block10 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: 250px; /* This maintains the aspect ratio of the image */
+}
+
+.ksops {
+    display:flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-left: auto; /* Align left margin to center */
+    margin-right: auto; /* Align right margin to center */
+    max-width: 1200px; /* Same max-width as the content above for alignment */
+    width: 100%;
+}
+
+.ksop {
+    background-color: #FEECE2;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 10px; /* Add right margin to the first example box */
+    text-align: justify; /* Justify the text inside the box */
+    display: inline-block; /* Use inline-block for side-by-side display */
+    max-width: 405px;
+}
+
+.ksop p {
+    text-align: justify;
+}
+
+.ksop h3 { text-align: center;}
+
+.ksop :last-child { margin-right: 0;}
+
+.image-block11 {
+    width: 350px; /* Adjust this to match the image width if needed */
+    text-align: center;
+    margin-left: 22.5px;
+}
+
+.image-block11 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: 75px; /* This maintains the aspect ratio of the image */
+}
+
+.content6 h1, 
+.content6 h2, 
+.content6 h3, 
+.content6 h4, 
+.content6 h5, 
+.content6 h6 {
+    text-align: center; /* Center-align for headings */
+}
+
+.content6 {
+    background-color: #FEECE2; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: justify; /* Text alignment to center */
+    align-items: center;
+    margin-top: 10px;
+}
+
+.content7 {
+    background-color: #FEECE2; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: justify; /* Text alignment to center */
+    align-items: center;
+}
+
+.outer-content5 { 
+    background-color: #E2BFB3; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: center; /* Text alignment to center */
+    justify-content: space-between;
+}
+
+.content7 h1, 
+.content7 h2, 
+.content7 h3, 
+.content7 h4, 
+.content7 h5, 
+.content7 h6 {
+    text-align: center; /* Center-align for headings */
+}
+
+.srowsmcols h3 {
+    text-align: center; /* Center-align for headings */
+}
+
+.srowsmcols {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin-top: 10px;
+}
+
+.srowmcol {
+    background-color: #FEECE2;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 552px; /* Adjust the width to be less than 50% to create space */
+    margin-right: 10px; /* Add right margin to the first example box */
+    text-align: justify; /* Justify the text inside the box */
+    display: inline-block; /* Use inline-block for side-by-side display */
+}
+
+.srowmcol p {
+    text-align: justify;
+}
+
+.srowmcol:last-child {
+    margin-right: 0; /* Remove right margin for the last example box */
+}
+
+.image-block12 {
+    width: 550px; /* Adjust this to match the image width if needed */
+    text-align: center;
+    margin-left: 1px;
+    margin-top: 32px;
+}
+
+.image-block12 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: 250px; /* This maintains the aspect ratio of the image */
+}
+
+.image-block13 {
+    width: 550px; /* Adjust this to match the image width if needed */
+    text-align: center;
+    margin-left: 1px;
+}
+
+.image-block13 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: 250px; /* This maintains the aspect ratio of the image */
+}
+
+.content8 {
+    background-color: #FEECE2; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: justify; /* Text alignment to center */
+    align-items: center;
+}
+
+.outer-content6 { 
+    background-color: #E2BFB3; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: flex; /* Block display to fill width */
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: center; /* Text alignment to center */
+    justify-content: space-between;
+}
+
+.content8 h1, 
+.content8 h2, 
+.content8 h3, 
+.content8 h4, 
+.content8 h5, 
+.content8 h6 {
+    text-align: center; /* Center-align for headings */
+}
+
+.mops {
+    display:flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-left: auto; /* Align left margin to center */
+    margin-right: auto; /* Align right margin to center */
+    max-width: 1200px; /* Same max-width as the content above for alignment */
+    width: 100%;
+}
+
+.mop {
+    background-color: #FEECE2;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 10px; /* Add right margin to the first example box */
+    text-align: justify; /* Justify the text inside the box */
+    display: inline-block; /* Use inline-block for side-by-side display */
+    max-width: 580px;
+}
+
+.mop p {
+    text-align: justify;
+}
+
+.mop h3 {
+    text-align: center; /* Center-align for headings */
+}
+
+.mops-group {
+    display:flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-left: auto; /* Align left margin to center */
+    margin-right: auto; /* Align right margin to center */
+    max-width: 1200px; /* Same max-width as the content above for alignment */
+    width: 100%;
+}
+
+.mops-group .mop:last-child, .mops .mop:last-child {
+    margin-right: 0;
+}
+
+.image-block14 {
+    width: 100%; /* Adjust this to match the image width if needed */
+    max-width: 225px; /* Adjust this to match the image width if needed */
+    margin: 0 auto; /* This centers the figure if it has a set width less than its container */
+    float: right;
+    top: 0%;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+.image-block14 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: 200px; /* This maintains the aspect ratio of the image */
+}
+
+.image-block14 figcaption {
+    font-size: small;
+    text-align:center;
+    margin-top: 0.5em; /* Adds some space between the image and the caption */
+}
+
+.content9 {
+    background-color: #FEECE2; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: justify; /* Text alignment to center */
+    align-items: center;
+}
+
+.outer-content7 { 
+    background-color: #E2BFB3; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: flex; /* Block display to fill width */
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: center; /* Text alignment to center */
+    justify-content: space-between;
+}
+
+.content9 h1, 
+.content9 h2, 
+.content9 h3, 
+.content9 h4, 
+.content9 h5, 
+.content9 h6 {
+    text-align: center; /* Center-align for headings */
+}
+
+.cgops {
+    display: flex;
+    justify-content: space-between; /* Adjusted to space-between for equal spacing */
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.cgop {
+    background-color: #FEECE2;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    flex: 0 1 calc(33.3333% - 20px); /* Flex-basis of 33.3333% for 3 items per row, minus 20px for margin */
+    margin-right: 10px; /* Space between the columns */
+    box-sizing: border-box;
+}
+
+/* Remove the right margin for the last item in the row */
+.cgops :nth-child(3n) {
+    margin-right: 0;
+}
+
+/* Adjust if there are less than three items in the last row */
+.cgops :nth-last-child(-n+3):nth-child(3n) {
+    margin-right: 10px;
+}
+
+.cgops :nth-last-child(-n+3):last-child,
+.cgops :nth-last-child(-n+3):nth-child(3n+1) {
+    margin-right: 0;
+}
+
+/* Adjust the bottom margin for the last row of items */
+.cgops :nth-last-child(-n+3) {
+    margin-bottom: 0;
+}
+
+.cgop p {
+    text-align: justify;
+}
+
+.cgop h3 {
+    text-align: center; /* Center-align for headings */
+}
+
+.content6 h1, 
+.content6 h2, 
+.content6 h3, 
+.content6 h4, 
+.content6 h5, 
+.content6 h6 {
+    text-align: center; /* Center-align for headings */
+}
+
+.content6 {
+    background-color: #FEECE2; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: justify; /* Text alignment to center */
+    align-items: center;
+    margin-top: 10px;
+}
+
+.image-block15 {
+    width: 100%; /* Adjust this to match the image width if needed */
+    max-width: 350px; /* Adjust this to match the image width if needed */
+    margin: 0 auto; /* This centers the figure if it has a set width less than its container */
+    float: right;
+    top: 0%;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+.image-block15 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: 400px; /* This maintains the aspect ratio of the image */
+}
+
+.image-block15 figcaption {
+    font-size: small;
+    text-align:center;
+    margin-top: 0.5em; /* Adds some space between the image and the caption */
+}
+
+.content10 {
+    background-color: #FEECE2; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: justify; /* Text alignment to center */
+    align-items: center;
+    height: auto;
+}
+
+.content10 h1, 
+.content10 h2, 
+.content10 h4, 
+.content10 h5, 
+.content10 h6 {
+    text-align: center; /* Center-align for headings */
+}
+
+.content11 {
+    background-color: #FEECE2; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin-top: 20px; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: justify; /* Text alignment to center */
+    align-items: center;
+    height: auto;
+}
+
+.content11 h1, 
+.content11 h2, 
+.content11 h3, 
+.content11 h4, 
+.content11 h5, 
+.content11 h6 {
+    text-align: center; /* Center-align for headings */
+}
+
+.content12 {
+    background-color: #FEECE2; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    text-align: justify; /* Text alignment to center */
+    align-items: center;
+    margin-top: -15px;
+}
+
+.content12 h1, 
+.content12 h2, 
+.content12 h3, 
+.content12 h4, 
+.content12 h5, 
+.content12 h6 {
+    text-align: center; /* Center-align for headings */
+}
+
+.numbered-list2 {
+    list-style-type: none; /* Remove default numbers */
+    padding-left: 0px;
+  }
+
+.numbered-list2 li {
+    margin-bottom: 15px; /* Space between items */
+  }
+
+.oneandtwo h3 {
+    text-align: center; /* Center-align for headings */
+}
+
+.oneandtwo {
+    display: flex;
+    justify-content: space-between; /* Adjusted to space-between for equal spacing */
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.one {
+    background-color: #FEECE2;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    margin-right: 10px; /* Space between the columns */
+    box-sizing: border-box;
+}
+
+.one p {
+    text-align: justify;
+}
+
+.one:last-child {
+    margin-right: 0; /* Remove right margin for the last example box */
+}
+
+.image-block16 {
+    width: 100%; /* Adjust this to match the image width if needed */
+    max-width: 300px; /* Adjust this to match the image width if needed */
+    margin: 0 auto; /* This centers the figure if it has a set width less than its container */
+    float: right;
+    top: 0%;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+.image-block16 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: 200px; /* This maintains the aspect ratio of the image */
+}
+
+.image-block16 figcaption {
+    font-size: small;
+    text-align:center;
+    margin-top: 0.5em; /* Adds some space between the image and the caption */
+}
+
+.image-block17 {
+    width: 100%; /* Adjust this to match the image width if needed */
+    max-width: 275px; /* Adjust this to match the image width if needed */
+    margin: 0 auto; /* This centers the figure if it has a set width less than its container */
+    float: right;
+    top: 0%;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+.image-block17 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: 195px; /* This maintains the aspect ratio of the image */
+}
+
+.threeandfour {
+    display: flex;
+    justify-content: space-between; /* Adjusted to space-between for equal spacing */
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.three {
+    background-color: #FEECE2;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    margin-right: 10px; /* Space between the columns */
+    box-sizing: border-box;
+}
+
+.three p {
+    text-align: justify;
+}
+
+.three:last-child {
+    margin-right: 0; /* Remove right margin for the last example box */
+}
+
+.fiveandsix {
+    display: flex;
+    justify-content: space-between; /* Adjusted to space-between for equal spacing */
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.five {
+    background-color: #FEECE2;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    margin-right: 10px; /* Space between the columns */
+    box-sizing: border-box;
+}
+
+.five p {
+    text-align: justify;
+}
+
+.five:last-child {
+    margin-right: 0; /* Remove right margin for the last example box */
+}
+
+.image-block18 {
+    width: 100%; /* Adjust this to match the image width if needed */
+    max-width: 150px; /* Adjust this to match the image width if needed */
+    margin: 0 auto; /* This centers the figure if it has a set width less than its container */
+    float: right;
+    top: 0%;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+.image-block18 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: 150px; /* This maintains the aspect ratio of the image */
+}
+
+.image-block18 figcaption {
+    font-size: small;
+    text-align:center;
+    margin-top: 0.5em; /* Adds some space between the image and the caption */
+}
+
+.image-block19 {
+    width: 100%; /* Adjust this to match the image width if needed */
+    max-width: auto; /* Adjust this to match the image width if needed */
+    margin: 0 auto; /* This centers the figure if it has a set width less than its container */
+    float: right;
+    top: 0%;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+.image-block19 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: auto; /* This maintains the aspect ratio of the image */
+}
+
+.image-block19 figcaption {
+    font-size: small;
+    text-align:center;
+    margin-top: 0.5em; /* Adds some space between the image and the caption */
+}
+
+.sevenandeight {
+    display: flex;
+    justify-content: space-between; /* Adjusted to space-between for equal spacing */
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.seven {
+    background-color: #FEECE2;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    margin-right: 10px; /* Space between the columns */
+    box-sizing: border-box;
+}
+
+.seven p {
+    text-align: justify;
+}
+
+.seven:last-child {
+    margin-right: 0; /* Remove right margin for the last example box */
+}
+
+.image-block20 {
+    width: 100%; /* Adjust this to match the image width if needed */
+    max-width: 250px; /* Adjust this to match the image width if needed */
+    margin: 0 auto; /* This centers the figure if it has a set width less than its container */
+    float: right;
+    top: 0%;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+.image-block20 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: 150px; /* This maintains the aspect ratio of the image */
+}
+
+.image-block20 figcaption {
+    font-size: small;
+    text-align:center;
+    margin-top: 0.5em; /* Adds some space between the image and the caption */
+}
+
+.nineandten {
+    display: flex;
+    justify-content: space-between; /* Adjusted to space-between for equal spacing */
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.nine {
+    background-color: #FEECE2;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    margin-right: 10px; /* Space between the columns */
+    box-sizing: border-box;
+}
+
+.nine p {
+    text-align: justify;
+}
+
+.nine:last-child {
+    margin-right: 0; /* Remove right margin for the last example box */
+}
+
+.image-block21 {
+    width: 100%; /* Adjust this to match the image width if needed */
+    max-width: 275px; /* Adjust this to match the image width if needed */
+    margin: 0 auto; /* This centers the figure if it has a set width less than its container */
+    float:right;
+    top: 0%;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+.image-block21 img {
+    width: 100%; /* This makes the image responsive, adjust if a fixed width is required */
+    height: 150px; /* This maintains the aspect ratio of the image */
+}
+
+.threeandfour h3 {
+    text-align: center; /* Center-align for headings */
+}
+
+.fiveandsix h3 {
+    text-align: center; /* Center-align for headings */
+}
+
+.sevenandeight h3 {
+    text-align: center; /* Center-align for headings */
+}
+
+.nineandten h3 {
+    text-align: center; /* Center-align for headings */
+}
+
+.one, .three, .five, .seven, .nine { /* Assuming all these classes are for the boxes */
+    background-color: #FEECE2;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    flex: 1 1 calc(50% - 40px); /* 40px accounts for the gap on either side of the box */
+    margin-bottom: 0px; /* Adds margin at the bottom of each box */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.video-container {
+    text-align: center; /* Center-align the video */
+    padding: 20px; /* Add some padding if needed */
+    margin-top: 20px; /* Add margin on top to separate it from the content above */
+    position: relative;
+    cursor: pointer;
+}
+
+.content13 {
+    background-color: #FEECE2; /* Background color similar to the container */
+    padding: 10px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin: auto; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1160px; /* Max width to contain the content */
+    width: 100%;
+    text-align: justify; /* Text alignment to center */
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-bottom: -30px;
+}
+
+.content14 {
+    background-color: #FEECE2; /* Background color similar to the container */
+    padding: 10px;
+    padding-left: 250px;
+    padding-right: 250px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin-left: -250px; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1200px; /* Max width to contain the content */
+    width: 100%;
+    text-align: justify; /* Text alignment to center */
+    align-items: center;
+    margin-top: 10px;
+}
+
+.content15 {
+    background-color: #FEECE2; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin-top: 0px; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1160px; /* Max width to contain the content */
+    width: 100%;
+    align-items: center;
+    height: auto;
+}
+
+.content15 h3,
+.content15 p {
+    text-align: center; /* Center-align for headings */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create three columns */
+    grid-gap: 10px; /* space between boxes */
+    padding: 20px;
+    max-width: 1200px; /* max container width */
+    margin: auto; /* center the container */
+    margin-top: 0px;
+    margin-left: -20px;
+}
+
+.grid-item {
+    background-color: #FEECE2;
+    border: 1px solid #ddd; /* Light border for each box */
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* More prominent shadow */
+    font-size: 1.2em; /* Larger font size for the text */
+    display: block;
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    height: 150px; /* Set a fixed height */
+    text-align: center; /* Ensure text is centered */
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Dark text for contrast */
+    border-radius: 10px;
+    width: 344.85px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.content16 {
+    background-color: #FEECE2; /* Background color similar to the container */
+    padding: 20px; /* Padding inside the content box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    margin-top: -10px; /* Auto margins for centering */
+    display: block; /* Block display to fill width */
+    max-width: 1160px; /* Max width to contain the content */
+    width: 100%;
+    align-items: center;
+    height: auto;
+}
+
+.content16 h2,
+.content16 p {
+    text-align: center; /* Center-align for headings */
+}

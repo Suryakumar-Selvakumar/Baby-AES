@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ShiftRows and MixColumns</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"></head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="/aes-history">History</a></li>
+                <li><a href="/aes-working">Working</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/encrypt">Encrypt</a></li>
+                <li><a href="/decrypt">Decrypt</a></li>
+            </ul>
+        </nav> 
+        <h1>ShiftRows and MixColumns</h1>
+        <div class="outer-content5">
+            <div class="content7">
+                <p>The ShiftRows and MixColumns steps are crucial for ensuring the security of the AES encryption process. They provide key advantages such as Diffusion, Disruption of patterns, Complexity, Confusion, Uniformity, etc. to the cipher. Together, ShiftRows and MixColumns ensure that after several rounds of AES, each byte of the ciphertext depends on every byte of the plaintext, thus providing a strong level of security. Without these steps, the encryption would be weaker, potentially allowing for more efficient cryptanalytic attacks.</p>
+            </div>
+            <div class="srowsmcols">
+                <div class="srowmcol">
+                <h3>ShiftRows</h3>
+                <p>The ShiftRows step operates on the rows of the state; it cyclically shifts the bytes in each row by a certain offset. For AES, the first row is left unchanged. Each byte of the second row is shifted one to the left. Similarly, the third and fourth rows are shifted by offsets of two and three respectively. In this way, each column of the output state of the ShiftRows step is composed of bytes from each column of the input state.</p>
+                <figure class="image-block12">
+                    <img src="{{ url_for('static', filename='images/srows.jpeg') }}">
+                </figure>
+                <p style="margin-top: 50px;">The importance of this step is to avoid the columns being encrypted independently, in which case AES would degenerate into four independent block ciphers.</p>
+                </div>
+                <div class="srowmcol">
+                <h3>MixColumns</h3>
+                <p>In the MixColumns step, the four bytes of each column of the state are combined using an invertible linear transformation. The MixColumns function takes four bytes as input and outputs four bytes, where each input byte affects all four output bytes.</p>
+                <p>During this operation, each column is transformed using a fixed matrix (matrix left-multiplied by column gives new value of column in the state):</p>
+                <figure class="image-block13">
+                    <img src="{{ url_for('static', filename='images/mcols.jpeg') }}">
+                </figure>
+                <p>In more general sense, each column is treated as a polynomial over \( \text{GF}(2^8) \) and is then multiplied modulo \( 01_{16} \cdot z^4 + 01_{16} \) with a fixed polynomial \( c(z) = 03_{16} \cdot z^3 + 01_{16} \cdot z^2 + 01_{16} \cdot z + 02_{16} \). The coefficients are displayed in their hexadecimal equivalent of the binary representation of bit polynomials from \( \text{GF}(2)[x] \). The MixColumns step can also be viewed as a multiplication by the shown particular MDS matrix in the finite field \( \text{GF}(2^8) \).</p>
+                </div>
+            </div>
